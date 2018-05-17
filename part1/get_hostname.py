@@ -29,4 +29,12 @@ def main():
           </native>
           <filter>
            """
+ result=m.get_config('running',hostname_filter)
+ xml_doc=xml.dom.minidom.parseString(result.xml)
+ hostname=xml_doc.getElementsByTagName("hostname")
+ print(hostname[0].firstChild.nodeValue)
+
+
+if__name__=='__main__':
+ sys.exit(main())
 
